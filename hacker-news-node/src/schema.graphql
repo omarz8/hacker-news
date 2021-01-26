@@ -11,6 +11,7 @@
   }
 
   type Feed {
+    #  id: ID!
   links: [Link!]!
   count: Int!
 }
@@ -21,6 +22,7 @@
     url: String!
     postedBy: User
     votes: [Vote!]!
+    createdAt: DateTime!
   }
 
   type AuthPayload {
@@ -56,3 +58,5 @@
     asc
     desc
   }
+
+  scalar DateTime
