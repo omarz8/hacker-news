@@ -11,7 +11,7 @@
   }
 
   type Feed {
-    #  id: ID!
+     id: ID!
   links: [Link!]!
   count: Int!
 }
