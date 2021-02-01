@@ -25,9 +25,6 @@ const App = () => {
           <Route exact path="/search" 
           component={Search}
           />
-          <Route exact path="/top"
-          component={LinkList} 
-          />
           <Route exact path="/new/:page"
           component={LinkList}
           />
