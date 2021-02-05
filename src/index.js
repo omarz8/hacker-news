@@ -10,7 +10,8 @@ const Mutation = require('./resolvers/Mutation')
 const User = require('./resolvers/User')
 const Link = require('./resolvers/Link')
 const Vote = require('./resolvers/Vote')
-const Subscription = require('./resolvers/Subscription')
+const Subscription = require('./resolvers/Subscription');
+const { Console } = require('console');
 
 
 const prisma = new PrismaClient()
@@ -44,13 +45,22 @@ const server = new ApolloServer({
   }
 })
 
-const PORT= process.env.port || 4000;
+const PORT= process.env.PORT || 4000;
 
-server
-  .listen()
-  // .then(({ url }) =>
-  //   console.log(`Server is running on ${url}`)
-  // );
-  .then ((PORT)=>
-  console.log(`server is runnung on ${PORT}`)
-  );
+// server
+//   .listen(port)
+//   // .then(({ url }) =>
+//   //   console.log(`Server is running on ${url}`)
+//   // );
+//   .then (()=>
+//   console.log(`server is running on ${port}`)
+//   );
+
+  // server.listen(PORT, () => {
+  //   console.log(`Server is running on port ${PORT}`);
+  // });
+
+  server
+  .listen({ port: process.env.PORT || 4000 })
+  .then(({ url }) => { 
+    console.log(`Server ready at ${url}`); });
