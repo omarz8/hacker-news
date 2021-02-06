@@ -42,8 +42,7 @@ const server = new ApolloServer({
           ? getUserId(req)
           : null
     };
-  },
-  introspection: true,
+  }
 })
 
 const PORT= process.env.PORT || 4000;
