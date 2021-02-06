@@ -19,7 +19,8 @@ import App from './components/App';
 
 
 const httpLink = createHttpLink({
-  uri: 'http://localhost:4000'
+  // uri: 'http://localhost:4000'
+  uri: ''
 });
 
 const authLink = setContext((_, { headers }) => {
@@ -33,7 +34,8 @@ const authLink = setContext((_, { headers }) => {
 });
 
 const wsLink = new WebSocketLink({
-  uri: `ws://localhost:4000/graphql`,
+  // uri: `ws://localhost:4000/graphql`,
+  uri:`ws:/graphql`,
   options: {
     reconnect: true,
     connectionParams: {
