@@ -11,7 +11,7 @@ const User = require('./resolvers/User')
 const Link = require('./resolvers/Link')
 const Vote = require('./resolvers/Vote')
 const Subscription = require('./resolvers/Subscription');
-const { Console } = require('console');
+// const { Console } = require('console');
 
 
 const prisma = new PrismaClient()
@@ -45,6 +45,10 @@ const server = new ApolloServer({
     };
   }
 })
+
+// server.applyMiddleware({
+//   path: '/hackernews', // you should change this to whatever you want
+// });
 
 const PORT= process.env.PORT || 4000;
 
